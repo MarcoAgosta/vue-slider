@@ -29,7 +29,23 @@ createApp({
             currentImg: 0,
         }
     },
+
     methods: {
+
+        upBtn(){
+            if (this.currentImg === 0){
+                this.currentImg = 4;
+            } else {
+                this.currentImg--;
+            }
+        },
+        downBtn(){
+            if (this.currentImg === 4){
+                this.currentImg = 0;
+            } else {
+                this.currentImg++;
+            }
+        }
 
     }
 }).mount("#app")
