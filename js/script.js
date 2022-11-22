@@ -32,23 +32,32 @@ createApp({
 
     methods: {
 
-        upBtn(){
+        upImg(){
             if (this.currentImg === 0){
                 this.currentImg = 4;
             } else {
                 this.currentImg--;
             }
         },
-        downBtn(){
+
+        downImg(){
             if (this.currentImg === 4){
                 this.currentImg = 0;
             } else {
                 this.currentImg++;
             }
         },
+
         setImg(numero){
             this.currentImg = numero;
-        } 
+        },
 
+        intervalDown: function(){
+            setInterval(this.downImg, 3000)
+        }
+    },
+
+    mounted(){
+        this.intervalDown();
     }
 }).mount("#app")
