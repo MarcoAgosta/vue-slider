@@ -45,7 +45,10 @@ createApp({
             } else {
                 this.currentImg++;
             }
-        }
+        },
+        setImg(numero){
+            this.currentImg = numero;
+        } 
 
     }
 }).mount("#app")
