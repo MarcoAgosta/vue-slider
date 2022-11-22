@@ -25,15 +25,17 @@
                     </div>
                 </div>
 
-                <div class="thumbs">
+                <div class="thumbs"
+                    @mouseover = "clearIntervalDown()"
+                    @mouseleave = "intervalDown()">
+
                     <div class="prev" @click = "upImg"></div>
                     <div class="next" @click = "downImg"></div>
 
-                    <div v-for="i in 5" class="thumb" v-bind:class = "(currentImg === i-1) ? 'active' : ''" @click = "setImg(i-1)">
-                        <img v-bind:src = slides[i-1].image alt="SpiderMan" />
+                    <div v-for="i in 5" class="thumb" v-bind:class = "(currentImg === i-1) ? 'active' : ''" 
+                    @click = "setImg(i-1)">
+                    <img v-bind:src = slides[i-1].image alt="SpiderMan" />
                     </div>
-
-                    
                 </div>
 
             </div>
